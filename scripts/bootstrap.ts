@@ -25,20 +25,19 @@ files.forEach((pkgName) => {
         pkgName,
         "mr-hope",
       ],
-      homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/${pkgName}#readme`,
+      homepage: `https://github.com/lcx12901/vuepress-theme-lcx/packages/${pkgName}#readme`,
       bugs: {
-        url: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues",
+        url: "https://github.com/lcx12901/vuepress-theme-lcx/issues",
       },
       repository: {
         type: "git",
-        url: "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+        url: "git+https://github.com/lcx12901/vuepress-theme-lcx.git",
         directory: `packages/${pkgName}`,
       },
       license: "MIT",
       author: {
-        name: "Mr.Hope",
-        email: "mister-hope@outlook.com",
-        url: "https://mrhope.site",
+        name: "Mr.Lcx",
+        email: "wktl1991504424@gmail.com",
       },
       type: "module",
       exports: {
