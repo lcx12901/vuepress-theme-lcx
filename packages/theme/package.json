@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-lcx",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta2",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -26,6 +26,7 @@
   },
   "type": "module",
   "exports": {
+    ".": "./lib/node/index.js",
     "./package.json": "./package.json"
   },
   "main": "lib/node/index.js",

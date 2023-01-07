@@ -6,7 +6,9 @@
     "rootDir": "./src",
     "outDir": "./lib",
     "inlineSources": true,
-    "paths": {}
+    "paths": {
+      "@lcx12901/*": ["./src/client/*.js"]
+    }
   },
-  "include": ["./src", "./src/*.d.ts"]
+  "include": ["./src", "./src/*.d.ts"],
 }

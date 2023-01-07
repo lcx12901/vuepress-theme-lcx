@@ -4,7 +4,9 @@
     "baseUrl": "./",
     "module": "ESNext",
     "rootDir": "./src",
-    "paths": {}
+    "paths": {
+      "@lcx12901/*": ["./src/client/*.js"]
+    }
   },
   "include": ["./src"]
 }
