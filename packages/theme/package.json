@@ -72,7 +72,8 @@
     "chokidar": "^3.5.3",
     "gray-matter": "^4.0.3",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "ora": "6.1.2"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-beta.60",
