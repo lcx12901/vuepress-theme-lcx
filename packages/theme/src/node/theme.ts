@@ -1,7 +1,10 @@
-import type { ThemeFunction } from "@vuepress/core";
-
-export const lcxTheme = (): ThemeFunction => () => {
-    return {
-        name: "vuepress-theme-lcx",
-    }
-}
+// import type { Theme } from "@vuepress/core";
+//
+// export const lcxTheme = (themeConfig: Record<string, unknown>): Theme => {
+//     return {
+//         name: "vuepress-theme-lcx",
+//         onInitialized(app) {
+//             const userConfig = resolveUserConfig(themeConfig)
+//         }
+//     }
+// }
