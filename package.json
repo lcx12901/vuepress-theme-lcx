@@ -1,0 +1,31 @@
+{
+  "name": "vuepress-theme-lcx",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "lcx12901",
+  "license": "MIT",
+  "description": "🐍 A configurable VuePress theme site | 一款可配置的VuePress主题.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vuepress-theme",
+    "vuepress-theme-lcx",
+    "blog-theme",
+    "vue",
+    "vuepress"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "lcx12901/vuepress-theme-lcx"
+  },
+  "devDependencies": {
+    "vuepress": "^1.9.8"
+  },
+  "bugs": {
+    "url": "https://github.com/lcx12901/vuepress-theme-lcx/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
