@@ -1,0 +1,131 @@
+{
+  "name": "vuepress-theme-lcx",
+  "version": "1.0.0-beta.1",
+  "description": "A light vuepress theme with tons of features",
+  "keywords": [
+    "vuepress",
+    "vuepress2",
+    "theme",
+    "vuepress-theme",
+    "blog",
+    "vuepress-blog",
+    "vuepress-theme-blog"
+  ],
+  "bugs": {
+    "url": "https://github.com/lcx12901/vuepress-theme-lcx/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcx12901/vuepress-theme-lcx.git",
+    "directory": "packages/theme"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Lcx",
+    "email": "wktl1991504424@gmail.com"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib",
+    "templates"
+  ],
+  "scripts": {
+    "build": "pnpm build:ts && pnpm copy",
+    "build:ts": "tsc -b tsconfig.release.json",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "copy": "cpx \"src/client/**/*.{css,scss,jpg,vue}\" lib/client",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
+    "dev:copy": "pnpm copy -w",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0",
+    "npm": ">=8",
+    "pnpm": ">=7"
+  },
+  "dependencies": {
+    "@types/body-scroll-lock": "^3.1.0",
+    "@vuepress/cli": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/core": "2.0.0-beta.60",
+    "@vuepress/plugin-active-header-links": "2.0.0-beta.60",
+    "@vuepress/plugin-container": "2.0.0-beta.60",
+    "@vuepress/plugin-external-link-icon": "2.0.0-beta.60",
+    "@vuepress/plugin-git": "2.0.0-beta.60",
+    "@vuepress/plugin-nprogress": "2.0.0-beta.60",
+    "@vuepress/plugin-palette": "2.0.0-beta.60",
+    "@vuepress/plugin-prismjs": "2.0.0-beta.60",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.60",
+    "@vuepress/shared": "2.0.0-beta.60",
+    "@vuepress/utils": "2.0.0-beta.60",
+    "@vueuse/core": "^9.10.0",
+    "balloon-css": "^1.2.0",
+    "bcrypt-ts": "^3.0.0",
+    "body-scroll-lock": "^3.1.5",
+    "cheerio": "1.0.0-rc.12",
+    "chokidar": "^3.5.3",
+    "gray-matter": "^4.0.3",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-beta.60",
+    "@vuepress/bundler-webpack": "2.0.0-beta.60",
+    "@vuepress/markdown": "2.0.0-beta.60"
+  },
+  "peerDependencies": {
+    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/plugin-active-header-links": "2.0.0-beta.60",
+    "@vuepress/plugin-container": "2.0.0-beta.60",
+    "@vuepress/plugin-external-link-icon": "2.0.0-beta.60",
+    "@vuepress/plugin-git": "2.0.0-beta.60",
+    "@vuepress/plugin-nprogress": "2.0.0-beta.60",
+    "@vuepress/plugin-palette": "2.0.0-beta.60",
+    "@vuepress/plugin-prismjs": "2.0.0-beta.60",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.60",
+    "sass-loader": "^13.2.0",
+    "vuepress": "2.0.0-beta.60",
+    "vuepress-vite": "2.0.0-beta.60",
+    "vuepress-webpack": "2.0.0-beta.60"
+  },
+  "peerDependenciesMeta": {
+    "@vuepress/client": {
+      "optional": true
+    },
+    "@vuepress/plugin-active-header-links": {
+      "optional": true
+    },
+    "@vuepress/plugin-container": {
+      "optional": true
+    },
+    "@vuepress/plugin-external-link-icon": {
+      "optional": true
+    },
+    "@vuepress/plugin-git": {
+      "optional": true
+    },
+    "@vuepress/plugin-nprogress": {
+      "optional": true
+    },
+    "@vuepress/plugin-palette": {
+      "optional": true
+    },
+    "@vuepress/plugin-prismjs": {
+      "optional": true
+    },
+    "@vuepress/plugin-theme-data": {
+      "optional": true
+    },
+    "sass-loader": {
+      "optional": true
+    },
+    "vuepress": {
+      "optional": true
+    }
+  }
+}
