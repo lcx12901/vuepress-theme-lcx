@@ -1,4 +1,23 @@
-node_modules/
+# Node modules
+**/node_modules/**
+
+# npm config
+.npmrc
+
+# Build files
+packages/*/lib/
+
+# Vuepress Cache
+**/.vuepress/.cache/**
+# Vuepress Temp
+**/.vuepress/.temp/**
+# Vuepress Output
+dist/
+
+# Typescript build info
+*.tsbuildinfo
+
+
 .vscode
-blog/.vuepress/dist
 .idea
+.DS_Store

@@ -1,12 +1,47 @@
 {
-  "name": "vuepress-theme-lcx",
+  "name": "vuepress-theme-lcx-root",
   "version": "1.0.0",
   "main": "index.js",
   "author": "lcx12901",
   "license": "MIT",
+  "private": true,
   "description": "🐍 A configurable VuePress theme site | 一款可配置的VuePress主题.",
+  "type": "module",
+  "workspaces": [
+    "demo/*",
+    "docs/*",
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cross-env NODE_ENV=production pnpm run --stream -r build",
+    "build:no-bundle": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
+    "clean": "pnpm run --stream -r clean",
+    "commit": "pnpm git-cz",
+    "copy": "pnpm run --parallel -r copy",
+    "dev": "concurrently \"tsc -b tsconfig.build.json --watch\" \"pnpm run dev:copy\"",
+    "dev:copy": "pnpm run --parallel -r dev:copy",
+    "docs:vite-build": "pnpm run -r docs:vite-build",
+    "docs:webpack-build": "pnpm run -r docs:vite-build",
+    "postinstall": "husky install",
+    "lint": "pnpm lint:prettier --write && pnpm lint:eslint --fix && pnpm lint:stylelint --fix",
+    "lint:check": "pnpm lint:prettier && pnpm lint:eslint && pnpm lint:stylelint",
+    "lint:eslint": "eslint . --ext .js,.ts,.vue",
+    "lint:md": "markdownlint **/*.md",
+    "lint:prettier": "prettier --check .",
+    "lint:stylelint": "stylelint packages/*/src/**/*.scss",
+    "packages:bootstrap": "tsx scripts/bootstrap.ts",
+    "packages:check-update": "pnpm dlx npm-check-updates -u --deep --timeout 600000",
+    "packages:update": "pnpm up -r",
+    "release": "pnpm clean && pnpm build && pnpm release:bump && pnpm release:publish && pnpm release:sync",
+    "release:bump": "bumpp package.json demo/*/package.json docs/*/package.json packages/*/package.json --execute=\"pnpm commit-and-tag-version && git add CHANGELOG.md\" --commit \"chore(release): publish v%s\" --all --tag --push",
+    "release:publish": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/release.ts",
+    "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/sync.ts",
+    "test": "vitest --coverage"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
   },
   "keywords": [
     "vuepress-theme",
@@ -19,13 +54,62 @@
     "type": "git",
     "url": "lcx12901/vuepress-theme-lcx"
   },
-  "devDependencies": {
-    "vuepress": "^1.9.8"
+  "packageManager": "pnpm@7.22.0",
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0",
+    "npm": ">=8",
+    "pnpm": ">=7"
   },
   "bugs": {
     "url": "https://github.com/lcx12901/vuepress-theme-lcx/issues"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.0",
+    "@commitlint/config-conventional": "^17.4.0",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "@vitest/coverage-c8": "^0.26.3",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "bumpp": "^8.2.1",
+    "commit-and-tag-version": "^10.1.0",
+    "commitizen": "^4.2.6",
+    "concurrently": "^7.6.0",
+    "cpx2": "^4.2.0",
+    "cross-env": "^7.0.3",
+    "cz-git": "^1.4.1",
+    "esbuild": "^0.16.15",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.8.0",
+    "execa": "^6.1.0",
+    "http-server": "^14.1.1",
+    "husky": "^8.0.3",
+    "inquirer": "^9.1.4",
+    "magic-string": "^0.27.0",
+    "markdownlint-cli": "^0.33.0",
+    "nano-staged": "^0.8.0",
+    "ora": "^6.1.2",
+    "picocolors": "^1.0.0",
+    "prettier": "^2.8.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.9.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-dts": "^5.1.1",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "sort-package-json": "^2.1.0",
+    "stylelint": "^14.16.1",
+    "stylelint-config-hope": "^1.0.1",
+    "tslib": "^2.4.1",
+    "tsx": "^3.12.1",
+    "typescript": "^4.9.4",
+    "vitest": "^0.26.3"
   }
 }
