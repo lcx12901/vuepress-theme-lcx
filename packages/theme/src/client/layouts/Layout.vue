@@ -1,7 +1,7 @@
 <template>
   <div class="theme-container">
     <Common>
-      <div>awdd</div>
+      <div>测试2</div>
     </Common>
   </div>
 </template>
