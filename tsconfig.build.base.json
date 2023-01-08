@@ -21,13 +21,14 @@
     "resolveJsonModule": true,
 
     // Emit
+    "declaration": true,
     "downlevelIteration": false,
     "importHelpers": true,
     "importsNotUsedAsValues": "remove",
     "newLine": "lf",
     "noEmitOnError": true,
     "removeComments": false,
-    "inlineSources": true,
+    "inlineSources": false,
     "inlineSourceMap": false,
     "sourceMap": true,
 
@@ -40,22 +41,18 @@
     "forceConsistentCasingInFileNames": true,
 
     // lib
-    "lib": ["DOM", "ESNext"],
+    "lib": ["ES2021"],
     // minimal node 14 support
     "target": "ES2020",
     // minimal node 16 support
     // "target": "ES2021",
 
     // Compiler Diagnostics
+    "composite": true,
     "diagnostics": false,
     "listEmittedFiles": false,
 
     "skipLibCheck": true,
-    "pretty": true,
-    "paths": {
-      "@theme/*": [
-        "./packages/theme/src/client/components/*"
-      ],
-    }
+    "pretty": true
   }
 }

@@ -8,10 +8,9 @@ const packagesDir = resolve(process.cwd(), "packages");
 const packages = readdirSync(packagesDir);
 
 export const sync = (): Promise<void[]> => {
-    const promises = packages.map((packageName) =>
-        import(`../packages/${packageName}/package.json`, {
-            assert: { type: "json" },
-        }).then(
+    // @ts-ignore
+    const promises = packages.map((packageName) => import(`../packages/${packageName}/package.json`, {assert: { type: "json" },})
+        .then(
             ({ default: content }: { default: Record<string, unknown> }) =>
                 new Promise<void>((resolve) => {
                     const req = request(

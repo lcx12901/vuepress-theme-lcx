@@ -5,7 +5,7 @@
     "module": "ESNext",
     "rootDir": "./src",
     "paths": {
-      "@lcx12901/*": ["./src/client/*.js"]
+      "@theme/*": ["./src/client/*.js"]
     }
   },
   "include": ["./src"]

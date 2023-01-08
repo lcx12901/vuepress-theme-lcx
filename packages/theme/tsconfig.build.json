@@ -6,7 +6,7 @@
     "rootDir": "./src",
     "outDir": "./lib",
     "paths": {
-      "@lcx12901/*": ["./src/client/*.js"]
+      "@theme-hope/*": ["./src/client/*.js"]
     }
   },
   "include": ["./src", "./src/*.d.ts"],

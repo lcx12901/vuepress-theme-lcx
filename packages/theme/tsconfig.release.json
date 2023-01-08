@@ -7,8 +7,8 @@
     "outDir": "./lib",
     "inlineSources": true,
     "paths": {
-      "@lcx12901/*": ["./src/client/*.js"]
+      "@theme/*": ["./src/client/*.js"]
     }
   },
-  "include": ["./src", "./src/*.d.ts"],
+  "include": ["./src", "./src/*.d.ts"]
 }

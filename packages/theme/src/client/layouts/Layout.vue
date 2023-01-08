@@ -1,0 +1,16 @@
+<template>
+  <div class="theme-container">
+    <Common>
+      <div>awdd</div>
+    </Common>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import {usePageData, usePageFrontmatter} from "@vuepress/client";
+import Common from '../components/Common/index.vue'
+const page = usePageData()
+const frontmatter = usePageFrontmatter()
+
+// const { isShowSidebar, isShowCatalog } = useSidebarData()
+</script>
