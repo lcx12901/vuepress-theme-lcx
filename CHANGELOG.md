@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta2](https://github.com/lcx12901/vuepress-theme-lcx/compare/v2.0.0-beta1...v2.0.0-beta2) (2023-01-08)
+
 ## 2.0.0-beta1 (2023-01-08)
 
 
